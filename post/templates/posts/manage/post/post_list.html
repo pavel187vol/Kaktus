@@ -5,9 +5,16 @@
     <title></title>
   </head>
   <body>
+    <a href="{%url 'post:post_create'%}">Create</a>
+    <br>
     <h1>Посты</h1>
-    {% for object in objects %}
-    {{object.title}}
+    {% for post in posts %}
+    <a href="{{post.get_absolute_url}}">{{post.title}}</a>
+    <br>
+    <i>{{post.author}}</i>
+    <a href="{% url 'post:post_edit' pk=post.id%}">Edit</a>
+    <a href="{% url 'post:post_delete' pk=post.id%}">Delete</a>
+    <hr>
     {% endfor %}
 
   </body>
