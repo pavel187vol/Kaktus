@@ -9,7 +9,7 @@ class Tag(models.Model):
     class Meta:
         ordering = ['slug',]
 
-    def __str__():
+    def __str__(self):
         return self.title
 
     def get_absolute_url(self):
@@ -31,7 +31,7 @@ class Post(models.Model):
     class Meta:
         ordering = ('-created',)
 
-    def __str__():
+    def __str__(self):
         return self.title
 
     def get_absolute_url(self):
